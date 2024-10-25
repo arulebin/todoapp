@@ -56,34 +56,34 @@ function App() {
             style={{ backgroundImage: `url(${bg})` }}
           ></div>
 
-          <div className="relative z-10 flex flex-col h-full">
-            <h1 className="text-3xl text-white tracking-widest mt-12 mb-8 font-bold">
+          <div className="relative z-10 flex flex-col h-full w-full max-w-md mx-auto px-4">
+            <h1 className="text-3xl text-white tracking-widest mt-12 mb-8 font-bold text-center">
               TODO
             </h1>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row sm:space-x-4 mb-4">
               <input
                 type="text"
                 name="text"
-                className="px-4 py-2 rounded-md text-black w-10/12 focus:outline-none"
+                className="px-4 py-2 rounded-md text-black flex-1 focus:outline-none"
                 placeholder="Add a new task"
                 onChange={handleChange}
                 value={todo}
               />
               <button
                 onClick={handleAdd}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition"
+                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition mt-2 sm:mt-0"
               >
                 Save
               </button>
             </div>
             <div className="text-white">
-              <h2 className="text-2xl text-white tracking-widest mt-12 mb-8 font-bold">
+              <h2 className="text-2xl text-white tracking-widest mt-12 mb-8 font-bold text-center">
                 Your Tasks
               </h2>
-              {todos.length === 0 && <div className="m-2">No Tasks added</div>}
+              {todos.length === 0 && <div className="m-2 text-center">No Tasks added</div>}
               {todos.map((item) => {
                 return (
-                  <div key={item.id} className="todos flex items-center">
+                  <div key={item.id} className="todos flex items-center justify-between mb-2">
                     <input
                       type="checkbox"
                       className="mr-4 mt-1"
@@ -92,7 +92,7 @@ function App() {
                     />
                     <div
                       className={
-                        item.isCompleted ? "line-through w-96" : "w-96"
+                        item.isCompleted ? "line-through flex-1" : "flex-1"
                       }
                     >
                       {item.todo}
