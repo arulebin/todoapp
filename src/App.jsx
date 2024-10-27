@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import bg from "./assets/bg.jpg";
 import { v4 as uuidv4 } from "uuid";
+import { FaEdit } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
+
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -100,15 +103,15 @@ function App() {
                     <div className="h-full">
                       <button
                         onClick={() => handleEdit(item.id)}
-                        className="bg-blue-600 text-white px-3 py-1 m-1 rounded-md hover:bg-blue-500 transition"
+                        className="bg-blue-600 text-white px-4 py-2 m-1 rounded-md hover:bg-blue-500 transition"
                       >
-                        Edit
+                        <FaEdit />
                       </button>
                       <button
                         onClick={() => handleDelete(item.id)}
-                        className="bg-blue-600 text-white px-3 py-1 m-1 rounded-md hover:bg-blue-500 transition"
+                        className="bg-blue-600 text-white px-4 py-2 m-1 rounded-md hover:bg-blue-500 transition"
                       >
-                        Delete
+                       <MdDeleteOutline />
                       </button>
                     </div>
                   </div>
